@@ -2,7 +2,9 @@ require("dotenv").config();
 const express = require('express');
 const cors = require('cors');
 const app = express();
+const { errors } = require('celebrate');
 const bookRoute = require('./routes/book.route')
+const { initializeDatabase } = require("./models/");
 
 // Swagger Import
 const swaggerJsdoc = require('swagger-jsdoc')
@@ -48,19 +50,36 @@ app.use(
     swaggerUi.setup(specs)
 );
 
-// sequelize config
-const db = require('./models');
-const { errors } = require('celebrate');
-db.sequelize.sync();
-
 app.get('/', (req, res) => {
     res.send('Learning Sequelize');
 });
 
+// books route
 app.use('/api/books', bookRoute)
+// users route
+require("./routes/user.route.js")(app);
 
 // errors from celebrate library.
 app.use(errors())
 
+// starting server
+const startServer = async () => {
+    try {
+        await initializeDatabase();
 
-app.listen(process.env.SERVER_PORT, () => console.log(`App listening on port http://localhost:${process.env.SERVER_PORT}!`));
+        // Start server
+        const PORT = process.env.SERVER_PORT || 8080;
+        app.listen(PORT, () => {
+            console.log(`Server is running on port ${PORT}.`);
+        });
+    } catch (error) {
+        console.error(
+            "Server failed to start due to database initialization error:",
+            error.message
+        );
+    }
+};
+
+startServer();
+
+// app.listen(process.env.SERVER_PORT, () => console.log(`App listening on port http://localhost:${process.env.SERVER_PORT}!`));
