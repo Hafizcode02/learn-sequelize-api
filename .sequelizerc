@@ -1,3 +1,4 @@
+// File Config Sequelize Migrate and Seeder
 const path = require("path");
 
 module.exports = {
