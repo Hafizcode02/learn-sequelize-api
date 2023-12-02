@@ -1,7 +1,7 @@
+require("dotenv").config();
 const express = require('express');
 const cors = require('cors');
 const app = express();
-const port = 5001;
 const bookRoute = require('./routes/book.route')
 
 // Swagger Import
@@ -34,7 +34,7 @@ const options = {
         },
         servers: [
             {
-                url: "http://localhost:5001",
+                url: "http://localhost:" + process.env.SERVER_PORT,
             },
         ],
     },
@@ -63,4 +63,4 @@ app.use('/api/books', bookRoute)
 app.use(errors())
 
 
-app.listen(port, () => console.log(`App listening on port http://localhost:${port}!`));
+app.listen(process.env.SERVER_PORT, () => console.log(`App listening on port http://localhost:${process.env.SERVER_PORT}!`));
