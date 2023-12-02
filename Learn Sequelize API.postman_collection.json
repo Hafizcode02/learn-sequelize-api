@@ -1,0 +1,335 @@
+{
+	"info": {
+		"_postman_id": "4dabb245-2e4f-451f-85b4-062153f962a3",
+		"name": "Learn Sequelize API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "9385297"
+	},
+	"item": [
+		{
+			"name": "Get All Books",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-access-token",
+						"value": "",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:5001/api/books",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"api",
+						"books"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Book",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"Belajar JSXABCD\",\r\n    \"description\": \"Semoga Habis Belajar JS dapat pencerahan\",\r\n    \"published\": true\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5001/api/books",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"api",
+						"books"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Book",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"Belajar Sequelize Oy\",\r\n    \"description\": \"Semoga Habis Belajar Sequalize dapat pencerahan\",\r\n    \"published\": true\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5001/api/books/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"api",
+						"books",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Book by ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5001/api/books/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"api",
+						"books",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Register User",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"Hafiz Caniago\",\r\n  \"username\": \"hafiz\",\r\n  \"password\": \"hafiz\",\r\n  \"role\": 1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5001/api/users/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"api",
+						"users",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login User",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"username\": \"hafiz\",\r\n  \"password\": \"hafiz\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5001/api/users/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"api",
+						"users",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Refresh Token User",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"refreshToken\": \"0ed7405f-6fa9-40fe-84ab-2bbb47f0731d\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5001/api/users/refreshToken",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"api",
+						"users",
+						"refreshToken"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Users",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-access-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjU2NDE0NjdhLThlNDMtNDc2Yi1hMTA2LTFlMTBhMjU4NjI2MCIsImlhdCI6MTcwMTQ5ODMxMCwiZXhwIjoxNzAxNTAxOTEwfQ.dhRnrUJwENlRMiG488Ma0vbfMtOcruFtCBGGeTryid",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:5001/api/users/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"api",
+						"users",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Users By ID",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-access-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjU2NDE0NjdhLThlNDMtNDc2Yi1hMTA2LTFlMTBhMjU4NjI2MCIsImlhdCI6MTcwMTQ5ODMxMCwiZXhwIjoxNzAxNTAxOTEwfQ.dhRnrUJwENlRMiG488Ma0vbfMtOcruFtCBGGeTryid",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:5001/api/users/xxxxxx",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"api",
+						"users",
+						"xxxxxx"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "x-access-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjU2NDE0NjdhLThlNDMtNDc2Yi1hMTA2LTFlMTBhMjU4NjI2MCIsImlhdCI6MTcwMTQ5ODMxMCwiZXhwIjoxNzAxNTAxOTEwfQ.dhRnrUJwENlRMiG488Ma0vbfMtOcruFtCBGGeTryid",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:5001/api/users/xxxxxx",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"api",
+						"users",
+						"xxxxxx"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Users",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "x-access-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjU2NDE0NjdhLThlNDMtNDc2Yi1hMTA2LTFlMTBhMjU4NjI2MCIsImlhdCI6MTcwMTQ5ODMxMCwiZXhwIjoxNzAxNTAxOTEwfQ.dhRnrUJwENlRMiG488Ma0vbfMtOcruFtCBGGeTryid",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"username\": \"newadmin\",\r\n  \"password\": \"111222333\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5001/api/users/xxxxxx",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"api",
+						"users",
+						"xxxxxx"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
