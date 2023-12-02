@@ -1,5 +1,6 @@
-const db = require("../models");
-const Book = db.books;
+const { db } = require("../models");
+const { book: Book } = db;
+// const Book = db.books;
 
 // CREATE: untuk enambahkan data kedalam tabel book
 exports.create = (req, res) => {

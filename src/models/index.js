@@ -19,7 +19,7 @@ db.Sequelize = Sequelize;
 db.sequelize = sequelize;
 
 // define semua models yang ada pada aplikasi
-db.books = require('./book.model')(sequelize, Sequelize);
+db.book = require('./book.model')(sequelize, Sequelize);
 db.user = require('./user.model')(sequelize, Sequelize);
 db.role = require('./role.model')(sequelize, Sequelize);
 db.refreshToken = require('./refreshToken.model')(sequelize, Sequelize);
