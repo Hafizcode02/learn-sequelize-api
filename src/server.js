@@ -8,6 +8,7 @@ const bookRoute = require('./routes/book.route')
 const swaggerJsdoc = require('swagger-jsdoc')
 const swaggerUi = require('swagger-ui-express')
 
+// express config
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -58,6 +59,7 @@ app.get('/', (req, res) => {
 
 app.use('/api/books', bookRoute)
 
+// errors from celebrate library.
 app.use(errors())
 
 

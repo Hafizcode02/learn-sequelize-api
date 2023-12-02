@@ -10,6 +10,7 @@ exports.create = (req, res) => {
         published: req.body.published ? req.body.published : false,
     };
 
+    // Cek apakah judul buku sudah ada.
     Book.findOne({ where: { title: book.title } })
         .then((existingBook) => {
             if (existingBook) {
